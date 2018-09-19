@@ -1,0 +1,63 @@
+package application;
+
+import java.util.Locale;
+import java.util.Scanner;
+import entities.Student;
+
+public class Program {
+
+	public static void main(String[] args) {
+		
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		Student stu = new Student();
+		
+		System.out.print("Nome: ");
+		stu.name = sc.nextLine();
+		System.out.print("Fisrt Note: ");
+		stu.nota1 = sc.nextDouble();
+		System.out.print("Second Note: ");
+		stu.nota2 = sc.nextDouble();
+		System.out.print("Third Note: ");
+		stu.nota3 = sc.nextDouble();
+		
+		System.out.println();
+		System.out.printf("Final Grade = %.2f%n", stu.finalGrade());
+		if (stu.finalGrade() > 60.0) {
+			System.out.println("PASS");
+		}
+		else {
+			System.out.println("FAILED");
+			System.out.printf("MISSING POINTS %.2f%n", stu.missingPoints(), " POINTS");
+		}
+		
+		System.out.println();
+		
+		/* -----------------------SEGUNDO ALUNO--------------------------------------------*/
+		
+		System.out.print("Nome: ");
+		stu.name = sc.nextLine();
+		sc.nextLine();
+		System.out.print("Fisrt Note: ");
+		stu.nota1 = sc.nextDouble();
+		System.out.print("Second Note: ");
+		stu.nota2 = sc.nextDouble();
+		System.out.print("Third Note: ");
+		stu.nota3 = sc.nextDouble();
+		
+		System.out.println();
+		System.out.printf("Final Grade = %.2f%n", stu.finalGrade());
+		if (stu.finalGrade() > 60.0) {
+			System.out.println("PASS");
+		}
+		else {
+			System.out.println("FAILED");
+			System.out.printf("MISSING POINTS %.2f%n", stu.missingPoints(), " POINTS");
+		}
+		
+		sc.close();
+
+	}
+
+}
